@@ -14,4 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/executeCrawler', 'CrawlerController@executeCrawler');
+Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');

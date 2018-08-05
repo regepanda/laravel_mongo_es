@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Request;
 
 class CrawlerController extends Controller
 {
-    public function executeCrawler()
+    public function executeEyesCrawler()
     {
         $crawlerCate = Request::input('crawler_cate');
         $page = Request::input('page');
