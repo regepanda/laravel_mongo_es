@@ -22,10 +22,13 @@ class CrawlerController extends Controller
 
         $result = Service::getInstance()->executeService('EyesService', 'getEyes', [$crawlerCate, $page, $keyWorld]);
         $crawlerCategory = array_keys(Config::getInstance()->crawlerCategory);
+        //@todo 这里需要王宇飞对$crawlerCategory变量进行入库操作
+
+        $dataFromMysql = [];
 
         return view('', compact(
             'result',
-            'crawlerCategory'
+            'dataFromMysql'
         ));
     }
 }
