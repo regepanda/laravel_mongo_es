@@ -16,9 +16,9 @@ class CrawlerController extends Controller
 {
     public function executeEyesCrawler()
     {
-        $crawlerCate = Request::input('crawler_cate');
-        $page = Request::input('page');
-        $keyWorld = Request::input('key_world');
+        $crawlerCate = Request::input('crawler_cate', 'tianyan');
+        $page = Request::input('page', 1);
+        $keyWorld = Request::input('key_world', '北京房地产');
 
         $result = Service::getInstance()->executeService('EyesService', 'getEyes', [$crawlerCate, $page, $keyWorld]);
         $crawlerCategory = array_keys(Config::getInstance()->crawlerCategory);
