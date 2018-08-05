@@ -13,8 +13,7 @@ class Config
     private static $instance;
 
     public $crawlerCategory = [
-        'tianyan',
-        'jingdong'
+        'tianyan' => 'https://www.tianyancha.com/search/p%u?key=%s'
     ];
 
     //防止直接创建对象

@@ -9,16 +9,19 @@
 namespace App\crawler\services;
 
 
+use App\crawler\config\Config;
+
 class EyesService
 {
-    public function getUrl($page, $keyWord)
+    public function getUrl($crawlerCate, $page, $keyWord)
     {
-        return sprintf("https://www.tianyancha.com/search/p%u?key=%s", $page, $keyWord);
+        $url = Config::getInstance()->crawlerCategory;
+        return sprintf($url[$crawlerCate], $page, $keyWord);
     }
 
-    public function getEyes($page, $keyWord)
+    public function getEyes($crawlerCate, $page, $keyWord)
     {
-        $url = $this->getUrl($page, $keyWord);
+        $url = $this->getUrl($crawlerCate, $page, $keyWord);
         $script = app_path().'/crawler/script/house.py';
         $outPut = shell_exec("python $script $url");
         return json_decode($outPut, true);

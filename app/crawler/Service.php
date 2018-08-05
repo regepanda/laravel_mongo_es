@@ -48,6 +48,6 @@ class Service
         $service = $serviceRefertion->newInstanceArgs();
         $refertionMethod = $serviceRefertion->getMethod($method);
         $result = $refertionMethod->invokeArgs($service, $params);
-        dump($result);
+        return $result;
     }
 }

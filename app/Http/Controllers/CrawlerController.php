@@ -8,12 +8,24 @@
 
 namespace App\Http\Controllers;
 
+use App\crawler\config\Config;
 use App\crawler\Service;
+use Illuminate\Support\Facades\Request;
 
 class CrawlerController extends Controller
 {
     public function executeCrawler()
     {
-        Service::getInstance()->executeService('EyesService', 'getEyes', [1, '北京房地产']);
+        $crawlerCate = Request::input('crawler_cate');
+        $page = Request::input('page');
+        $keyWorld = Request::input('key_world');
+
+        $result = Service::getInstance()->executeService('EyesService', 'getEyes', [$crawlerCate, $page, $keyWorld]);
+        $crawlerCategory = array_keys(Config::getInstance()->crawlerCategory);
+
+        return view('', compact(
+            'result',
+            'crawlerCategory'
+        ));
     }
 }
