@@ -14,30 +14,41 @@
     <!-- Bootstrap core CSS -->
     <link href="{{asset('bootstrap/css/bootstrap.css')}}" rel="stylesheet">
     <script href="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+    <style>
+        th{
+            text-align: center;
+        }
+        tr{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <table class="table table-hover">
-            <tr>
-                <th>公司名称</th>
-                <th>公司法人</th>
-                <th>联系电话</th>
-                <th>联系邮箱</th>
-                <th>注册时间</th>
-                <th>注册资本</th>
-            </tr>
-            @foreach($result as $data)
+        <br>
+        <div class="panel panel-info">
+            <div class="panel-heading">开天眼</div>
+            <table class="table table-striped table-hover">
                 <tr>
-
-                    <td>{{isset($data['company_name']) ? $data['company_name'] : '无'}}</td>
-                    <td>{{isset($data['company_people']) ? $data['company_people'] : '无'}}</td>
-                    <td>{{isset($data['phone']) ? $data['phone'] : '无'}}</td>
-                    <td>{{isset($data['email']) ? $data['email'] : '无'}}</td>
-                    <td>{{isset($data['company_time']) ? $data['company_time'] : '无'}}</td>
-                    <td>{{isset($data['company_price']) ? $data['company_price'] : '无'}}</td>
+                    <th>公司名称</th>
+                    <th>公司法人</th>
+                    <th>联系电话</th>
+                    <th>联系邮箱</th>
+                    <th>注册时间</th>
+                    <th>注册资本</th>
                 </tr>
-            @endforeach
-        </table>
+                @foreach($result as $data)
+                    <tr>
+                        <td>{{isset($data['company_name']) ? $data['company_name'] : '无'}}</td>
+                        <td>{{isset($data['company_people']) ? $data['company_people'] : '无'}}</td>
+                        <td>{{isset($data['phone']) ? $data['phone'] : '无'}}</td>
+                        <td>{{isset($data['email']) ? $data['email'] : '无'}}</td>
+                        <td>{{isset($data['company_time']) ? $data['company_time'] : '无'}}</td>
+                        <td>{{isset($data['company_price']) ? $data['company_price'] : '无'}}</td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
     </div>
 </body>
 </html>
