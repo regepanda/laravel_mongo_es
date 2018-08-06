@@ -21,8 +21,10 @@
             <tr>
                 <th>公司名称</th>
                 <th>公司法人</th>
-                <th>联系方式</th>
-                <th>邮箱</th>
+                <th>联系电话</th>
+                <th>联系邮箱</th>
+                <th>注册时间</th>
+                <th>注册资本</th>
             </tr>
             @foreach($result as $data)
                 <tr>
@@ -31,6 +33,8 @@
                     <td>{{isset($data['company_people']) ? $data['company_people'] : '无'}}</td>
                     <td>{{isset($data['phone']) ? $data['phone'] : '无'}}</td>
                     <td>{{isset($data['email']) ? $data['email'] : '无'}}</td>
+                    <td>{{isset($data['company_time']) ? $data['company_time'] : '无'}}</td>
+                    <td>{{isset($data['company_price']) ? $data['company_price'] : '无'}}</td>
                 </tr>
             @endforeach
         </table>
