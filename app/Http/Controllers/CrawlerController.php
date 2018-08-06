@@ -29,9 +29,10 @@ class CrawlerController extends Controller
             //京东数据入库，这里记得把图片的地址拿去请求图片资源，然后上传到自己的本地服务器
         }
         $dataFromMysql = [];
-        return view('', compact(
+        return view('/index.show', compact(
             'result',
-            'dataFromMysql'
+            'dataFromMysql',
+            'crawlerCategory'
         ));
     }
 }
