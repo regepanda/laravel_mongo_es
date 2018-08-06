@@ -17,16 +17,18 @@ class CrawlerController extends Controller
     public function executeEyesCrawler()
     {
         $crawlerCate = Request::input('crawler_cate', 'tianyan');
-        $page = Request::input('page', 1);
-        $keyWorld = Request::input('key_world', '北京房地产');
+        $page = Request::input('page', 3);
+        $keyWorld = Request::input('key_world', '房地产');
 
-        $result = Service::getInstance()->executeService('EyesService', 'getEyes', [$crawlerCate, $page, $keyWorld]);
+        $result = Service::getInstance()->executeService([$page, $keyWorld, $crawlerCate]);
         $crawlerCategory = array_keys(Config::getInstance()->crawlerCategory);
         //@todo 这里需要王宇飞对$crawlerCategory变量进行入库操作
-
+        if ($crawlerCate == 'jingdong') {
+            //天眼数据入库
+        } elseif ($crawlerCate == 'tianyan') {
+            //京东数据入库，这里记得把图片的地址拿去请求图片资源，然后上传到自己的本地服务器
+        }
         $dataFromMysql = [];
-
-
         return view('/index.show', compact(
             'result',
             'dataFromMysql'
