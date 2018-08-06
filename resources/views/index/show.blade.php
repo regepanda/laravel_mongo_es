@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div>
         <br>
         <div class="panel panel-info">
             <div class="panel-heading">开天眼</div>
