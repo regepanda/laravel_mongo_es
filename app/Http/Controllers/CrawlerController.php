@@ -26,7 +26,8 @@ class CrawlerController extends Controller
 
         $dataFromMysql = [];
 
-        return view('', compact(
+
+        return view('/index.show', compact(
             'result',
             'dataFromMysql'
         ));
