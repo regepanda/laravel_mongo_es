@@ -11,19 +11,19 @@ namespace App\crawler\services;
 
 use App\crawler\config\Config;
 
-class EyesService
+class JdService
 {
     public function getUrl($page, $keyWord, $crawlerCate)
     {
         $config = Config::getInstance()->crawlerCategory;
         $url = $config[$crawlerCate]['url'];
-        return sprintf($url, $page, $keyWord);
+        return sprintf($url, $keyWord, $keyWord, $page);
     }
 
-    public function getEyes($page, $keyWord, $crawlerCate)
+    public function getJD($page, $keyWord, $crawlerCate)
     {
         $url = $this->getUrl($page, $keyWord, $crawlerCate);
-        $script = app_path().'/crawler/script/tianyan.py';
+        $script = app_path().'/crawler/script/jingdong.py';
         $outPut = shell_exec("python $script $url");
         return json_decode($outPut, true);
     }

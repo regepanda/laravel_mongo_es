@@ -8,15 +8,11 @@
  */
 namespace App\crawler;
 
-use App\crawler\services\EyesService;
+use App\crawler\config\Config;
 
 class Service
 {
     private static $instance;
-
-    public $crawlerServices = [
-        'EyesService' => EyesService::class
-    ];
 
     //防止直接创建对象
     private function __construct()
@@ -39,9 +35,13 @@ class Service
 
     }
 
-    public function executeService($class, $method, $params)
+    public function executeService($params)
     {
-        $serviceRefertion = new \ReflectionClass($this->crawlerServices[$class]);
+        $config = Config::getInstance()->crawlerCategory;
+        $configType = $config[$params[count($params) - 1]];
+        $class = $configType['service'];
+        $method = $configType['method'];
+        $serviceRefertion = new \ReflectionClass($class);
         if (!$serviceRefertion->hasMethod($method)) {
             throw new \Exception('method参数错误');
         }

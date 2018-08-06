@@ -8,12 +8,24 @@
  */
 namespace App\crawler\config;
 
+use App\crawler\services\EyesService;
+use App\crawler\services\JdService;
+
 class Config
 {
     private static $instance;
 
     public $crawlerCategory = [
-        'tianyan' => 'https://www.tianyancha.com/search/p%u?key=%s'
+        'tianyan' => [
+            'url' => 'https://www.tianyancha.com/search/p%u\?key\=%s',
+            'service' => EyesService::class,
+            'method' => 'getEyes'
+        ],
+        'jingdong' => [
+            'url' => 'https://search.jd.com/Search\?keyword\=%s\&enc\=utf-8\&qrst\=1\&rt\=1\&stop\=1\&vt\=2\&wq\=%s\&stock\=1\&page\=%u\&s\=1\&click\=0',
+            'service' => JdService::class,
+            'method' => 'getJD'
+        ]
     ];
 
     //防止直接创建对象

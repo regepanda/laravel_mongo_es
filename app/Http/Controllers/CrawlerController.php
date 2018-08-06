@@ -17,15 +17,15 @@ class CrawlerController extends Controller
     public function executeEyesCrawler()
     {
         $crawlerCate = Request::input('crawler_cate', 'tianyan');
-        $page = Request::input('page', 1);
+        $page = Request::input('page', 2);
         $keyWorld = Request::input('key_world', '北京房地产');
 
-        $result = Service::getInstance()->executeService('EyesService', 'getEyes', [$crawlerCate, $page, $keyWorld]);
+        $result = Service::getInstance()->executeService([$page, $keyWorld, $crawlerCate]);
         $crawlerCategory = array_keys(Config::getInstance()->crawlerCategory);
         //@todo 这里需要王宇飞对$crawlerCategory变量进行入库操作
-
+        dump($result);
+        die;
         $dataFromMysql = [];
-
         return view('', compact(
             'result',
             'dataFromMysql'
