@@ -22,9 +22,7 @@ Route::get('testRedis','RedisController@testRedis')->name('testRedis');
 Route::group([
     'prefix' => 'crawler',
     'namespace'=>'\Crawler'
-],
-    function () {
+], function () {
         Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');
-    }
-);
+});
 
