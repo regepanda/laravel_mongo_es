@@ -6,11 +6,12 @@
  * Time: 下午5:35
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crawler;
 
 use App\crawler\config\Config;
 use App\crawler\Service;
 use Illuminate\Support\Facades\Request;
+use App\Http\Controllers\Controller;
 
 class CrawlerController extends Controller
 {

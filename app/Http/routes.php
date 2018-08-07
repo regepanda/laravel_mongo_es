@@ -14,4 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');
+
+
+Route::group([
+    'prefix' => 'crawler',
+    'namespace'=>'\Crawler'
+],
+    function () {
+        Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');
+    }
+);

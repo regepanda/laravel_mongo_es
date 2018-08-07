@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "elasticsearch/elasticsearch": "~5.0",
-        "jaeger/querylist": "^4.0"
+        "jaeger/querylist": "^4.0",
+        "hprose/hprose-swoole": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -48,5 +49,11 @@
     },
     "config": {
         "preferred-install": "dist"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
     }
 }
