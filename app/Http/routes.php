@@ -14,5 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');
 Route::get('testRedis','RedisController@testRedis')->name('testRedis');
+
+
+
+Route::group([
+    'prefix' => 'crawler',
+    'namespace'=>'\Crawler'
+],
+    function () {
+        Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');
+    }
+);
+
