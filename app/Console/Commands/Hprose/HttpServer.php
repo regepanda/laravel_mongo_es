@@ -29,9 +29,9 @@ class HttpServer extends Command
     public function handle()
     {
         $server = new Server("http://0.0.0.0:8086");
-        $server->addFunction(function ($name) {
-            return "Hello $name!";
-        });
+//        $server->addFunction(function ($name) {
+//            return "Hello $name!";
+//        });
         $server->start();
     }
 }
