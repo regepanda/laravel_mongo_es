@@ -17,7 +17,7 @@ class JdService
     {
         $config = Config::getInstance()->crawlerCategory;
         $url = $config[$crawlerCate]['url'];
-        return sprintf($url, $keyWord, $keyWord, $page);
+        return sprintf($url, $keyWord, $page);
     }
 
     public function getJD($page, $keyWord, $crawlerCate)

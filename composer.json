@@ -12,7 +12,8 @@
 
         "predis/predis": "^1.1",
 
-        "hprose/hprose-swoole": "dev-master"
+        "hprose/hprose-swoole": "dev-master",
+        "swooletw/laravel-swoole": "^2.4"
 
     },
     "require-dev": {

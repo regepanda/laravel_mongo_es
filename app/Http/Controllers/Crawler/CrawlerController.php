@@ -17,9 +17,9 @@ class CrawlerController extends Controller
 {
     public function executeEyesCrawler()
     {
-        $crawlerCate = Request::input('crawler_cate', 'tianyan');
+        $crawlerCate = Request::input('crawler_cate', 'jingdong');
         $page = Request::input('page', 3);
-        $keyWorld = Request::input('key_world', '北京房地产');
+        $keyWorld = Request::input('key_world', '床上四件套');
 
         $result = Service::getInstance()->executeService([$page, $keyWorld, $crawlerCate]);
         $crawlerCategory = array_keys(Config::getInstance()->crawlerCategory);
@@ -29,7 +29,8 @@ class CrawlerController extends Controller
         } elseif ($crawlerCate == 'tianyan') {
             //京东数据入库，这里记得把图片的地址拿去请求图片资源，然后上传到自己的本地服务器
         }
-        dump($result);die;
+        dump($result);
+        die;
         $dataFromMysql = [];
         return view('/index.show', compact(
             'result',

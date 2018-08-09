@@ -22,7 +22,7 @@ class Config
             'method' => 'getEyes'
         ],
         'jingdong' => [
-            'url' => 'https://search.jd.com/Search\?keyword\=%s\&enc\=utf-8\&qrst\=1\&rt\=1\&stop\=1\&vt\=2\&wq\=%s\&stock\=1\&page\=%u\&s\=1\&click\=0',
+            'url' => 'https://search.jd.com/Search\?keyword\=%s\&enc\=utf-8\&qrst\=1\&rt\=1\&stop\=1\&vt\=2\&stock\=1\&page\=%u\&s\=231\&click\=0',
             'service' => JdService::class,
             'method' => 'getJD'
         ]
