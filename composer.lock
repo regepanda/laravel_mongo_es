@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cbfc2a548a00798a48d0f3c2471c64de",
+    "content-hash": "680817d3ba29f215e3bae3ab341a1824",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -576,83 +576,6 @@
                 "xmlrpc"
             ],
             "time": "2018-04-24T14:29:31+00:00"
-        },
-        {
-            "name": "hprose/hprose-swoole",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hprose/hprose-swoole.git",
-                "reference": "b5476fcefd9a84b57343c5359765e1f579fc9b3a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hprose/hprose-swoole/zipball/b5476fcefd9a84b57343c5359765e1f579fc9b3a",
-                "reference": "b5476fcefd9a84b57343c5359765e1f579fc9b3a",
-                "shasum": ""
-            },
-            "require": {
-                "ext-hprose": ">=1.6.5",
-                "ext-swoole": ">=1.8.8",
-                "hprose/hprose": ">=2.0.23",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">=4.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Hprose\\Swoole\\": "src/Hprose/Swoole"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ma Bingyao",
-                    "email": "andot@hprose.com",
-                    "homepage": "http://hprose.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Hprose asynchronous client & standalone server based on swoole",
-            "homepage": "http://hprose.com/",
-            "keywords": [
-                "HTML5",
-                "Hprose",
-                "Socket",
-                "ajax",
-                "async",
-                "communication",
-                "cross-domain",
-                "cross-language",
-                "cross-platform",
-                "framework",
-                "future",
-                "game",
-                "http",
-                "json",
-                "jsonrpc",
-                "library",
-                "middleware",
-                "phprpc",
-                "protocol",
-                "rpc",
-                "serialization",
-                "serialize",
-                "service",
-                "tcp",
-                "unix",
-                "web",
-                "webapi",
-                "webservice",
-                "websocket",
-                "xmlrpc"
-            ],
-            "time": "2018-06-15T09:44:44+00:00"
         },
         {
             "name": "jaeger/g-http",
@@ -4038,9 +3961,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "hprose/hprose-swoole": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
