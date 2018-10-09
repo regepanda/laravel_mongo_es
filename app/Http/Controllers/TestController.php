@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
-class TestController extends \UserService
+use App\Model\ElasticSearch\EsClientConnection;
+
+class TestController extends Controller
 {
     public function test()
     {
-        return (new \UserService())->allInfo();
+        (new EsClientConnection())->search();
     }
 }

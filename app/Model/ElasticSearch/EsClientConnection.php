@@ -133,6 +133,12 @@ class EsClientConnection
             ]
         ];
 
+        $queryFour = [
+            'query' => [
+                
+            ]
+        ];
+
         //组建查新SDL
         $params = [
             'index' =>  $this->db,   //['my_index1', 'my_index2'],可以通过这种形式进行跨库查询
@@ -142,6 +148,7 @@ class EsClientConnection
         ];
         $result = $this->conn->search($params);
         $resources = $result['hits']['hits'];
+        dump($resources);die;
         foreach ($resources as &$resource) {
             $resource = $resource['_source'];
         }
