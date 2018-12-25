@@ -15,14 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test','TestController@test');
 
-
+Route::group([
+    'prefix' => 'es'
+], function () {
+    Route::get('/get', 'TestController@get');
+    Route::post('/add', 'TestController@add');
+    Route::post('/update', 'TestController@update');
+});
 
 Route::group([
     'prefix' => 'crawler',
     'namespace'=>'\Crawler'
 ], function () {
-        Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');
+    Route::get('/executeEyesCrawler', 'CrawlerController@executeEyesCrawler');
 });
 
