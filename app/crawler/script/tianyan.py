@@ -35,8 +35,8 @@ def requestEyes():
         'Hm_lpvt_e92c8d65d92d534b0fc290df538b4758': '1546498968'
     }
 
-    # startUrl = sys.argv[1]
-    startUrl = 'https://www.tianyancha.com/search?key=%E5%8C%97%E4%BA%AC%E6%88%BF%E5%9C%B0%E4%BA%A7';
+    startUrl = sys.argv[1]
+    # startUrl = 'https://www.tianyancha.com/search?key=%E5%8C%97%E4%BA%AC%E6%88%BF%E5%9C%B0%E4%BA%A7';
     result = requests.get(startUrl, headers=headers, cookies=cookies)  # 在请求中设定头，cookie
     houseHtml = result.text
     soup = BeautifulSoup(houseHtml, "html.parser")
