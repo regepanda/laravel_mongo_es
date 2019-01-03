@@ -23,25 +23,26 @@ def requestEyes():
         'undefined': '980ce5f0575c11e89d0063d282d3a9ab',
         'ssuid': '4001289176',
         'aliyungf_tc': 'AQAAAHvyQTEzpwAADJmMtoPCD/+9jK5G',
-        'csrfToken': 'eChII5aRZl0jAMOCBtK9UcK7',
-        'Hm_lvt_e92c8d65d92d534b0fc290df538b4758': '1533191152,1533200307',
+        'csrfToken': 'Luu14ap9jSU4Lvua_woi-Qe9',
+        'Hm_lvt_e92c8d65d92d534b0fc290df538b4758': '1546498197',
         '_ga': 'GA1.2.497910060.1533200307',
-        '_gid': 'GA1.2.1106128874.1533200307',
+        '_gid': 'GA1.2.1629279000.1546498198',
         'bannerFlag': 'true',
-        'token': '2fd759c21a8c4cec8a95834238138802',
-        '_utm': '52693bbe4d0240d488804dcef6f43a29',
-        'tyc-user-info': '%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODA4NjgzNzg1OCIsImlhdCI6MTUzMzI1OTQ5NSwiZXhwIjoxNTQ4ODExNDk1fQ.DczUY-thwcXuWpVmJDoMoFQx4O7IZkf8WNfxKvjYo7YhgmEwWAErJkfI55OTK9OVf00mdVdmXghkx1ekDAXXPw%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522redPoint%2522%253A%25220%2522%252C%2522vipManager%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218086837858%2522%257D',
-        'auth_token': 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODA4NjgzNzg1OCIsImlhdCI6MTUzMzI1OTQ5NSwiZXhwIjoxNTQ4ODExNDk1fQ.DczUY-thwcXuWpVmJDoMoFQx4O7IZkf8WNfxKvjYo7YhgmEwWAErJkfI55OTK9OVf00mdVdmXghkx1ekDAXXPw',
-        'Hm_lpvt_e92c8d65d92d534b0fc290df538b4758': '1533259497'
+        'token': '1417d7907d6d447b8e678b7f871e340d',
+        '_utm': '91a65d41a62b466585411ddd1e99ff2c',
+        'tyc-user-info': '%257B%2522claimEditPoint%2522%253A%25220%2522%252C%2522myQuestionCount%2522%253A%25220%2522%252C%2522explainPoint%2522%253A%25220%2522%252C%2522nickname%2522%253A%2522%25E8%258E%25AB%25E5%25B0%258F%25E8%25B4%259D%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522announcementPoint%2522%253A%25220%2522%252C%2522vipManager%2522%253A%25220%2522%252C%2522discussCommendCount%2522%253A%25220%2522%252C%2522monitorUnreadCount%2522%253A%2522123%2522%252C%2522onum%2522%253A%25220%2522%252C%2522claimPoint%2522%253A%25220%2522%252C%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODA4NjgzNzg1OCIsImlhdCI6MTU0NjQ5ODk2NCwiZXhwIjoxNTYyMDUwOTY0fQ.Qt57Z68RNlSq8Tgfy_2NAeowSXL7pNvcYGIuTRiSOAqCkTQfATbXQjJbXXy_2abkQcYVRTGDP9eo2YMci1kmiA%2522%252C%2522redPoint%2522%253A%25220%2522%252C%2522pleaseAnswerCount%2522%253A%25220%2522%252C%2522bizCardUnread%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218086837858%2522%257D',
+        'auth_token': 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODA4NjgzNzg1OCIsImlhdCI6MTU0NjQ5ODk2NCwiZXhwIjoxNTYyMDUwOTY0fQ.Qt57Z68RNlSq8Tgfy_2NAeowSXL7pNvcYGIuTRiSOAqCkTQfATbXQjJbXXy_2abkQcYVRTGDP9eo2YMci1kmiA',
+        'Hm_lpvt_e92c8d65d92d534b0fc290df538b4758': '1546498968'
     }
 
-    startUrl = sys.argv[1]
+    # startUrl = sys.argv[1]
+    startUrl = 'https://www.tianyancha.com/search?key=%E5%8C%97%E4%BA%AC%E6%88%BF%E5%9C%B0%E4%BA%A7';
     result = requests.get(startUrl, headers=headers, cookies=cookies)  # 在请求中设定头，cookie
     houseHtml = result.text
     soup = BeautifulSoup(houseHtml, "html.parser")
 
     datas = []
-    for house in soup.findAll("div", class_="search-result-single "):
+    for house in soup.findAll("div", class_="search-result-single"):
         data = {}
         companyName = house.find("a", class_="name ")
         companyName = re.compile(r'<[^>]+>', re.S).sub('', str(companyName))
@@ -58,18 +59,33 @@ def requestEyes():
         companyTime = re.compile(r'<[^>]+>', re.S).sub('', str(companyMes[2]))
         data['company_time'] = companyTime
 
-        contact = house.findAll("div", class_="col")
+        contact = house.find_all("div", class_="col")
         if len(contact):
-            data['phone'] = contact[0].select(".link-hover-click")[0].string
+            script = contact[0].find(name="script")
+            if script is None:
+                tmp = contact[0].findAll(name="span")
+                data['phone'] = tmp[1].string if len(tmp) >= 2 else None
+            else:
+                data['phone'] = script.string
+        else:
+            data['phone'] = None
+
         if len(contact) >= 2:
-            data['email'] = contact[1].select(".link-hover-click")[0].string
+            script = contact[1].find(name="script")
+            if script is None:
+                tmp = contact[1].findAll(name="span")
+                data['email'] = tmp[1].string if len(tmp) >= 2 else None
+            else:
+                data['email'] = script.string
+        else:
+            data['email'] = None
         datas.append(data)
     return datas
 
 
 if __name__ == '__main__':
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
+    # reload(sys)
+    # sys.setdefaultencoding('utf-8')
     datas = requestEyes()
     string = json.dumps(datas)
     print(string)
