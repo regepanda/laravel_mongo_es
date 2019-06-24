@@ -4,7 +4,9 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Console\Commands\Hprose\HttpServer;
+use App\Console\Commands\PushRedis;
+use App\Console\Commands\Parse;
+use App\Console\Commands\Csv;
 
 class Kernel extends ConsoleKernel
 {
@@ -14,7 +16,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        HttpServer::class
+        PushRedis::class,
+        Parse::class,
+        Csv::class
     ];
 
     /**
